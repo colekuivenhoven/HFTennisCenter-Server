@@ -3,19 +3,30 @@ const fs = require('fs');
 const dotenv = require('dotenv').config();
 const nodemailer = require('nodemailer');
 var CryptoJS = require("crypto-js");
+var aws = require('aws-sdk');
+
+const aws_email = "homerfordsender@gmail.com";
+
+aws.config.update({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'us-east-1'
+});
+
+const ses = new aws.SES();
+
+// aws.config = new aws.Credentials({
+//     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+// });
 
 const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com", 
+    host: "smtp.mailtrap.io", 
     secure: false,
-    port: 587,
-    tls: {
-        ciphers:'SSLv3',
-        rejectUnauthorized: false
-    },
+    port: 2525,
     auth: {
-        user: "homer-ford-tennis-autosender@outlook.com",
-        // pass: "hfP@ssn0de"
-        pass: "hfLim1996@!"
+        user: "3fbee01fa9f57c",
+        pass: "12c95e8d3c335e"
     }
 });
 
@@ -23,7 +34,32 @@ const transporter = nodemailer.createTransport({
 const global_functions = require('../resources/globalFunctions.js');
 const { errorMonitor } = require('events');
 
+// function sesEmailTo(toEmail, fromEmail, subject, message) {
+//     const params = {
+//         Destination: {
+//             ToAddresses: [toEmail]
+//         },
+//         Message: {
+//             Body: {
+//                 Text: {
+//                     Data: message,
+//                 }
+//             },
+//             Subject: {
+//                 Data: subject
+//             },
+//         },
+//         Source: fromEmail,
+//     };
+//     return ses.sendEmail(params).promise();
+// }
+
 module.exports = function(app, mysql_connection) {
+
+    app.get('/traptest', (req, res) => {
+
+    });
+
     app.get('/email/send-verification/:email(*)', (req, res) => {
         var ipAddress = (req.socket.remoteAddress).substring((req.socket.remoteAddress).lastIndexOf(':')+1);
         global_functions.logConnectionRecord('Email: Send Verification', ipAddress, req.method);

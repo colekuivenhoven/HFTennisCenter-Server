@@ -151,7 +151,7 @@ module.exports = function(app, mysql_connection) {
         global_functions.logConnectionRecord('Users: Delete User', ipAddress, req.method);
     
         mysql_connection.query(
-            `DELETE FROM USER WHERE User_id = `+req.body.id+`;`, 
+            `UPDATE USER SET User_status = 0 WHERE User_id = `+req.body.id+`;`, 
             function (err, rows, fields) {
                 if (err) {
                     console.log(err);

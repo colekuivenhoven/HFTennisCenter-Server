@@ -1715,3 +1715,22 @@
 11/14/2021 16:24:16 [Request GET] <Users: Get All Users>
 11/14/2021 16:24:16 [Request POST] <Report: Download>
 11/14/2021 16:24:16 [Request POST] <Report: Download>
+11/14/2021 16:39:41 [Database connection successful]
+11/14/2021 16:39:41 [Express listening on port 3040]
+11/14/2021 16:40:17 [Request POST] <Users: Login User>
+11/14/2021 16:40:27 [Request GET] <Reservations: Get All User Reservations>
+11/14/2021 16:40:37 [Request GET] <Reservations: Get All Reservations>
+11/14/2021 16:40:37 [Request GET] <Users: Get All Users>
+11/14/2021 16:40:37 [Request GET] <Closure: Getall>
+11/14/2021 16:40:37 [Request GET] <Reservations: Get All User Reservations>
+11/14/2021 16:40:37 [Request GET] <Reservations: Get All Reservations>
+11/14/2021 22:52:33 [Database connection successful]
+11/14/2021 22:52:33 [Express listening on port 3040]
+11/14/2021 22:52:47 [Request POST] <Users: Login User>
+11/14/2021 22:52:51 [Request GET] <Feedback: Get All>
+11/14/2021 22:52:51 [Request GET] <Users: Get All Users>
+11/14/2021 22:52:51 [Request POST] <Report: Download>
+11/14/2021 22:52:51 [Request POST] <Report: Download>
+11/14/2021 22:53:7 [Request GET] <Reservations: Get All User Reservations>
+11/14/2021 22:58:38 [Database connection successful]
+11/14/2021 22:58:38 [Express listening on port 3040]

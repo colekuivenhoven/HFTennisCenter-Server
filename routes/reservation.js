@@ -122,7 +122,7 @@ module.exports = function(app, mysql_connection) {
         var ipAddress = (req.socket.remoteAddress).substring((req.socket.remoteAddress).lastIndexOf(':')+1);
         global_functions.logConnectionRecord('Reservations: Get All User Reservations', ipAddress, req.method);
     
-        mysql_connection.query(`SELECT * FROM RESERVATION WHERE Customer_id = ${req.params.userid};`, function (err, rows, fields) {
+        mysql_connection.query(`SELECT * FROM RESERVATION WHERE Customer_id = ${req.params.userid} AND Reservation_status = 1`, function (err, rows, fields) {
             if (err) {
                 console.log(err);
                 res.status(200).json({
