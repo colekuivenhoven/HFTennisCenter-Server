@@ -169,3 +169,5 @@
 11/16/2021 2:51:44 [Request GET] <Users: Get All Users>
 11/16/2021 2:51:44 [Request POST] <Report: Download>
 11/16/2021 2:51:44 [Request POST] <Report: Download>
+11/16/2021 20:44:36 [Database connection successful]
+11/16/2021 20:44:36 [Express listening on port 3040]
